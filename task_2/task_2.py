@@ -29,13 +29,14 @@ def get_animals(soup, animals):
 
 animals = {}
 
+if __name__ == '__main__':
+    print('wait...')
+    while URL:
+        
+        r = requests.get(URL)
+        soup = bs(r.text, 'lxml')
 
-while URL:
-    
-    r = requests.get(URL)
-    soup = bs(r.text, 'lxml')
+        URL = get_animals(soup, animals)
 
-    URL = get_animals(soup, animals)
-
-for k, v in animals.items():
-    print(f'{k}: {len(v)}')
+    for k, v in animals.items():
+        print(f'{k}: {len(v)}')
